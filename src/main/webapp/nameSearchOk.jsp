@@ -1,18 +1,22 @@
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@page import="java.sql.*"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 가입 확인</title>
+<title>이름으로 회원 검색하여 반환</title>
 </head>
 <body>
+// 미완성임 //
 	<%
 		request.setCharacterEncoding("utf-8");
+		
+		String searchName = request.getParameter("name");
 	
+		String sql = "SELECT * FROM student_tbl WHERE name = '"+searchName+"'";
+				
 		String sno = request.getParameter("sno");
 		String name = request.getParameter("name");
 		String dept = request.getParameter("dept");
@@ -53,8 +57,7 @@
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}
-			
+		}			
 	%>
 </body>
 </html>
