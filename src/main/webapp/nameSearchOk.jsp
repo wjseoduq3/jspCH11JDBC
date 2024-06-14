@@ -22,7 +22,6 @@
 		String dept = request.getParameter("dept");
 		
 		String sql = "INSERT INTO student_tbl(sno, name, dept) VALUES ('"+sno+"', '"+name+"', '"+dept+"')";
-	
 		String driverName = "com.mysql.jdbc.Driver";
 		String url="jdbc:mysql://192.168.0.100:3306/jdy_school_db";
 		String username ="guest01";
